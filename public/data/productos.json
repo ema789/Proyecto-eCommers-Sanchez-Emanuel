@@ -1,0 +1,8 @@
+[
+  { "id": 1, "nombre": "Camisas", "precio": 35000,  "imagen":"/img/camisas1.jfif" },
+  { "id": 2, "nombre": "Pantalón", "precio": 30000,  "imagen":"/img/joggis1.jfif" },
+  { "id": 3, "nombre": "Short", "precio": 25000,"imagen":"/img/short1.jfif" },
+  { "id": 4, "nombre": "jean", "precio": 45000,"imagen":"/img/jean1.jfif" },
+  { "id": 5, "nombre": "Saco de Vestir", "precio": 80000,"imagen":"/img/sacosDeVestir1.jfif" },
+  { "id": 6, "nombre": "Busos", "precio": 40000,"imagen":"/img/busos1.jfif" }
+]

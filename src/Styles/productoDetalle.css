@@ -1,0 +1,96 @@
+.producto-detalle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  padding: 40px;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+/* Tarjeta individual */
+.producto-card {
+  text-align: center;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 400px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    0 12px 40px rgba(0, 0, 0, 0.1),
+    inset 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Título */
+.producto-detalle h1 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+/* Imagen */
+.imagen-detalle {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Precio */
+.producto-detalle p {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+/* Botón */
+.producto-detalle button {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.producto-detalle button:hover {
+  background: linear-gradient(90deg, #ff9966, #ff5e62);
+  transform: scale(1.05);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .producto-detalle {
+    padding: 25px;
+  }
+
+  .producto-detalle h1 {
+    font-size: 1.6rem;
+  }
+
+  .imagen-detalle {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .producto-detalle {
+    padding: 20px;
+  }
+
+  .producto-detalle h1 {
+    font-size: 1.4rem;
+  }
+
+  .producto-detalle button {
+    width: 100%;
+    padding: 10px;
+  }  
+}
