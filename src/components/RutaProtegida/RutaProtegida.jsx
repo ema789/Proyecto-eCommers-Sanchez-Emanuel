@@ -1,11 +1,14 @@
 // Este componente se usa para redirigir al usuario a otra ruta dentro de la aplicación
 import { Navigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext.jsx';
 
 // Definimos el componente funcional RutaProtegida
 // Recibe como props:
 // - isAuthenticated: indica si el usuario está autenticado (true o false)
 // - children: representa los componentes hijos que se deben mostrar si el usuario tiene acceso
-export default function RutaProtegida({ isAuthenticated, children}){
+export default function RutaProtegida({ children }){
+
+  const { isAuthenticated } = useAuth();
     
   // Si el usuario NO está autenticado (false),
   // se redirige automáticamente a la página de 

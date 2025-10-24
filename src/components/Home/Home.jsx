@@ -1,5 +1,6 @@
-import "../Styles/home.css";
-import Productos from "../components/Productos.jsx";
+import "../Home/Home.css";
+import Productos from '../Productos/Productos.jsx';
+
 export default function Home({ productos, agregarAlCarrito, isAuthenticated }) {
   return (
     <div className="home-container">
@@ -13,14 +14,14 @@ export default function Home({ productos, agregarAlCarrito, isAuthenticated }) {
       </div>
 
       <section className="productos-destacados">
-
         <h2>Productos</h2>
 
-        <Productos productos={productos} agregarAlCarrito={agregarAlCarrito} isAuthenticated={isAuthenticated} />
-
-
+        <Productos
+          productos={productos}
+          agregarAlCarrito={agregarAlCarrito}
+          isAuthenticated={isAuthenticated}
+        />
       </section>
-
     </div>
   );
 }

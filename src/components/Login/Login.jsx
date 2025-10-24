@@ -1,6 +1,6 @@
 // Este hook permite navegar programáticamente entre rutas dentro de la app
 import { useNavigate } from "react-router-dom";
-import "../Styles/login.css";
+import "../Login/login.css";
 
 export default function Login({ handleLogin, handleLogout }) {
 
@@ -9,17 +9,25 @@ export default function Login({ handleLogin, handleLogout }) {
   // ruta (por ejemplo, a la página de inicio)
   const navigate = useNavigate();
 
+  const login = () => {
+  handleLogin();
+  navigate("/carrito");
+};
+
+const logout = () => {
+  handleLogout();
+  navigate("/");
+};
+
   return (
     <div className="login-container">
       <h2>REGISTRATE</h2>
       <div className="auth-button">
         {/* Botón que ejecuta la función handleLogin cuando se hace clic */}
-        <button onClick={handleLogin}>Login</button>
+        <button onClick={login}>Login</button>
         {/* Botón que ejecuta handleLogout y luego redirige 
         al usuario a la página principal ("/") */}
-        <button onClick={() => { handleLogout(); // Cierra la sesión o elimina datos del usuario 
-                                 navigate("/"); //redirige al inicio
-                                 }}>Logout</button>
+        <button onClick={logout}>Logout</button>
       </div>
     </div>
   );

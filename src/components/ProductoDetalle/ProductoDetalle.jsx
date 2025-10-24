@@ -4,13 +4,19 @@ import { useParams } from "react-router-dom";
 // - useNavigate: para redirigir al usuario de forma programada 
 // (por ejemplo, después de hacer clic)
 import { useNavigate } from "react-router-dom";
-import "../Styles/productoDetalle.css";
+import "../ProductoDetalle/productoDetalle.css";
+
+import { useFetchProductos } from "../../hooks/useFetchProductos.js";
+import { useCarrito } from "../../context/CarritoContext.jsx";
+import { useAuth } from "../../context/AuthContext.jsx";
+
+const API_URL = "/data/productos.json";
 
 // Definimos el componente funcional ProductoDetalle
 // Recibe como props:
 // - productos: lista completa de productos
 // - agregarAlCarrito: función para añadir un producto al carrito
-export default function ProductoDetalle({ productos, agregarAlCarrito, isAuthenticated }) {
+export default function ProductoDetalle() {
 
   // Hook que nos permite redirigir a otra página dentro de la app
   const navigate = useNavigate();
@@ -18,6 +24,14 @@ export default function ProductoDetalle({ productos, agregarAlCarrito, isAuthent
   // Extraemos el parámetro "id" de la URL mediante el hook useParams
   // Ejemplo: si la ruta es "/productos/3", entonces id = "3"
   const { id } = useParams();
+
+  const { productos, cargando, error } = useFetchProductos(API_URL);
+  const { agregarAlCarrito } = useCarrito();
+  const { isAuthenticated } = useAuth();
+
+    // === Estado de carga o error ===
+  if (cargando) return <p className="mensaje">Cargando producto...</p>;
+  if (error) return <p className="error">Error: {error}</p>;
 
   // Buscamos dentro del array de productos 
   // el que tenga un id igual al de la URL
@@ -28,6 +42,18 @@ export default function ProductoDetalle({ productos, agregarAlCarrito, isAuthent
   // Si no se encuentra el producto con ese ID, 
   // se muestra un mensaje al usuario
   if (!producto) return <h2>Producto no encontrado</h2>;
+
+  // === Manejar agregar al carrito ===
+  const handleAgregar = () => {
+                  // Si el usuario no está autenticado, 
+              // se lo redirige a la página de login
+    if (!isAuthenticated) {
+      navigate("/login");
+    } else {
+      // Si está logueado, se agrega el producto al carrito
+      agregarAlCarrito(producto);
+    }
+  };
 
   return (
     <div className="producto-detalle">
@@ -40,18 +66,9 @@ export default function ProductoDetalle({ productos, agregarAlCarrito, isAuthent
         />
         <p>Precio: ${producto.precio}</p>
 
-      <button className="carrito-btn" onClick={() => {
-              // Si el usuario no está autenticado, 
-              // se lo redirige a la página de login
-              if (!isAuthenticated) {
-                navigate("/login");
-              } else {
-                // Si está logueado, se agrega el producto al carrito
-                agregarAlCarrito(producto);
-              }
-            }}>
-              Agregar al carrito
-            </button>
+        <button className="carrito-btn" onClick={handleAgregar}>
+          Agregar al carrito
+        </button>
       </div>
     </div>
   );

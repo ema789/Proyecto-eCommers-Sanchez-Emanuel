@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import '../Styles/navbar.css';
+import '../NavBar/navbar.css';
 
-export default function NavBar({carritoCount}) {
+export default function NavBar() {
   return (
     <nav className="navbar">
       <ul className="navbar-list">
@@ -12,7 +12,7 @@ export default function NavBar({carritoCount}) {
         
             <li className="navbar-item">
               <Link className="navbar-link" to="/carrito">
-                Carrito ({carritoCount})
+                Carrito 
               </Link>
             </li>
         

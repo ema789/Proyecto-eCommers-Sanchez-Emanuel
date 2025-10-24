@@ -1,3 +1,4 @@
+import '../Layout/layout.css';
 export default function Layout({ children }) {
   
   // El componente recibe una propiedad especial 

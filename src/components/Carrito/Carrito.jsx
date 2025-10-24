@@ -1,6 +1,10 @@
-import "../Styles/carrito.css";
-export default function Carrito({ carrito, vaciarCarrito }) {
-  const total = carrito.reduce((acc, p) => acc + p.precio, 0);
+import "../Carrito/carrito.css";
+
+
+
+export default function Carrito({ carrito, vaciarCarrito, total } ) {
+
+  
 
   return (
     <div className="carrito">

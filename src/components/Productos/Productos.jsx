@@ -3,7 +3,7 @@
 // - useNavigate: para redirigir al usuario de forma programada 
 // (por ejemplo, después de hacer clic)
 import { Link, useNavigate } from "react-router-dom";
-import "../Styles/productos.css";
+import "../Productos/productos.css";
 
 // Definimos el componente funcional Productos
 // Recibe como props:
