@@ -1,0 +1,55 @@
+/* src/components/BotonGlobal/BotonGlobal.css */
+
+.btn-global {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+  user-select: none;
+  flex: 1;
+}
+
+/* VARIANTES */
+.btn-global.primario {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(255, 126, 95, 0.3);
+}
+
+.btn-global.primario:hover {
+  background: linear-gradient(135deg, #ff9966, #ff5e62);
+  transform: scale(1.05);
+}
+
+.btn-global.secundario {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-global.secundario:hover {
+  background-color: #565e64;
+  transform: scale(1.05);
+}
+
+.btn-global.peligro {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-global.peligro:hover {
+  background-color: #b02a37;
+  transform: scale(1.05);
+}
+
+/* ESTADO DESHABILITADO */
+.btn-global:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  transform: none;
+}

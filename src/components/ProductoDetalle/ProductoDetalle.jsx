@@ -9,6 +9,7 @@ import "../ProductoDetalle/productoDetalle.css";
 import { useFetchProductos } from "../../hooks/useFetchProductos.js";
 import { useCarrito } from "../../context/CarritoContext.jsx";
 import { useAuth } from "../../context/AuthContext.jsx";
+import BontonGlobal from "../BontonGlobal";
 
 const API_URL = "/data/productos.json";
 
@@ -66,9 +67,11 @@ export default function ProductoDetalle() {
         />
         <p>Precio: ${producto.precio}</p>
 
+        <BontonGlobal texto="Agregar al Carrito" tipo="primario" onClick={handleAgregar}/>
+{/** 
         <button className="carrito-btn" onClick={handleAgregar}>
           Agregar al carrito
-        </button>
+        </button>**/}
       </div>
     </div>
   );

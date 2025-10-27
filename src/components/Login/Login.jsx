@@ -1,6 +1,7 @@
 // Este hook permite navegar programáticamente entre rutas dentro de la app
 import { useNavigate } from "react-router-dom";
 import "../Login/login.css";
+import BontonGlobal from "../BontonGlobal";
 
 export default function Login({ handleLogin, handleLogout }) {
 
@@ -24,10 +25,12 @@ const logout = () => {
       <h2>REGISTRATE</h2>
       <div className="auth-button">
         {/* Botón que ejecuta la función handleLogin cuando se hace clic */}
-        <button onClick={login}>Login</button>
+        <BontonGlobal texto="Login" onClick={login} className="primario"/>
+        
         {/* Botón que ejecuta handleLogout y luego redirige 
         al usuario a la página principal ("/") */}
-        <button onClick={logout}>Logout</button>
+        <BontonGlobal texto="Logout" onClick={logout} className="primario"/>
+
       </div>
     </div>
   );

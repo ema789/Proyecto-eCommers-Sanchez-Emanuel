@@ -1,76 +1,38 @@
-/* ================================================
-   🌐 CONTENEDOR PRINCIPAL DEL HOME
-================================================= */
 .home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4rem;
-  padding: 4rem 2rem;
-  background: linear-gradient(180deg, #fffaf7 0%, #fff5ed 100%);
-  min-height: 100vh;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* ================================================
-   🏠 SECCIÓN DE BIENVENIDA
-================================================= */
-.inicio {
   text-align: center;
-  background: linear-gradient(135deg, #ffffff, #f6f6f6);
-  padding: 3rem 2rem;
-  border-radius: 24px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  max-width: 900px;
-  width: 100%;
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.inicio:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  padding: 50px 20px;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  color: #fff;
+  min-height: 100vh;
 }
 
 .inicio h1 {
-  font-size: 3rem;
-  color: #222;
-  margin-bottom: 1.2rem;
-  letter-spacing: 1px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .descripcion {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: #555;
+  font-size: 1.1rem;
+  color: #fff;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
 }
 
-/* ================================================
-   🛍️ SECCIÓN DE PRODUCTOS DESTACADOS
-================================================= */
 .productos-destacados {
-  width: 100%;
-  max-width: 1300px;
-  text-align: center;
+  background-color: #fff;
+  color: #333;
+  padding: 40px 0;
+  border-radius: 30px 30px 0 0;
 }
 
 .productos-destacados h2 {
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
-  color: #222;
-  font-weight: 700;
-  position: relative;
+  font-size: 2rem;
+  color: #ff7e5f;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.productos-destacados h2::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #ff7e5f, #feb47b);
-  margin: 10px auto 0;
-  border-radius: 2px;
-}

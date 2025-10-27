@@ -3,6 +3,7 @@ import Productos from '../Productos/Productos.jsx';
 
 export default function Home({ productos, agregarAlCarrito, isAuthenticated }) {
   return (
+
     <div className="home-container">
       <div className="inicio">
         <h1> Bienvenido a ATS </h1>
@@ -23,5 +24,6 @@ export default function Home({ productos, agregarAlCarrito, isAuthenticated }) {
         />
       </section>
     </div>
+    
   );
 }

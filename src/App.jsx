@@ -25,7 +25,7 @@ function App() {
 
 return (
     
-    <Layout>
+    <Layout clasname="container">
 
       {/* Barra de navegación: recibe cantidad de productos */}
       <NavBar/>
